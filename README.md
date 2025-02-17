@@ -116,7 +116,7 @@ public class TelegramCLIGUI extends JFrame {
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class NchatRunner {
+public class Main {
     public static void main(String[] args) {
         try {
             // Запуск nchat как внешнего процесса
