@@ -107,3 +107,34 @@ public class TelegramCLIGUI extends JFrame {
     }
 }
 ```
+
+
+
+Вход Telegram 
+
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class NchatRunner {
+    public static void main(String[] args) {
+        try {
+            // Запуск nchat как внешнего процесса
+            Process process = new ProcessBuilder("python", "nchat.py", "--config", "configs/nostr.json")
+                    .redirectErrorStream(true)
+                    .start();
+
+            // Чтение вывода nchat
+            BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+
+            // Ожидание завершения процесса
+            process.waitFor();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}
