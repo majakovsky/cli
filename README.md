@@ -112,7 +112,7 @@ public class TelegramCLIGUI extends JFrame {
 
 Вход Telegram 
 
-
+```java
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -138,3 +138,4 @@ public class NchatRunner {
         }
     }
 }
+```
